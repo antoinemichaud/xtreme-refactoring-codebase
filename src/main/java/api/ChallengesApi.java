@@ -15,6 +15,11 @@ public class ChallengesApi {
                                         context.query().getInteger("player1Score"),
                                         context.get("player2Name"),
                                         context.query().getInteger("player2Score")))
+                        .get("/displayAlternativeScore", (context) -> tennisService
+                                .displayAlternativeScore(context.get("player1Name"),
+                                        context.query().getInteger("player1Score"),
+                                        context.get("player2Name"),
+                                        context.query().getInteger("player2Score")))
         ).start(8080);
     }
 

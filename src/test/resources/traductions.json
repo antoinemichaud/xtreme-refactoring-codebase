@@ -1,0 +1,40 @@
+{
+  "traductions": [
+    [
+      "Love",
+      "0"
+    ],
+    [
+      "Fifteen",
+      "15"
+    ],
+    [
+      "Thirty",
+      "30"
+    ],
+    [
+      "Forty",
+      "40"
+    ],
+    [
+      "Forty-Thirty",
+      "40-30"
+    ],
+    [
+      "Deuce",
+      "40-40"
+    ],
+    [
+      "Advantage <player1>",
+      "A-40"
+    ],
+    [
+      "Thirty-All",
+      "30-30"
+    ],
+    [
+      "Win for <player1>",
+      "Game <player1>!"
+    ]
+  ]
+}
