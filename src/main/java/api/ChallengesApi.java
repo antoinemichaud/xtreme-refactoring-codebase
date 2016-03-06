@@ -15,17 +15,17 @@ public class ChallengesApi {
                                         context.query().getInteger("player1Score"),
                                         context.get("player2Name"),
                                         context.query().getInteger("player2Score")))
-                        .get("/displayAlternativeScore", (context) -> tennisService
+                        .get("/displayScore/alternative", (context) -> tennisService
                                 .displayAlternativeScore(context.get("player1Name"),
                                         context.query().getInteger("player1Score"),
                                         context.get("player2Name"),
                                         context.query().getInteger("player2Score")))
-                        .get("/displayFrenchScore", (context) -> tennisService
+                        .get("/displayScore/french", (context) -> tennisService
                                 .displayFrenchScore(context.get("player1Name"),
                                         context.query().getInteger("player1Score"),
                                         context.get("player2Name"),
                                         context.query().getInteger("player2Score")))
-                        .get("/displayGermanScore", (context) -> tennisService
+                        .get("/displayScore/german", (context) -> tennisService
                                 .displayGermanScore(context.get("player1Name"),
                                         context.query().getInteger("player1Score"),
                                         context.get("player2Name"),
