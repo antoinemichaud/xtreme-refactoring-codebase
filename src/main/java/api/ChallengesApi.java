@@ -10,22 +10,22 @@ public class ChallengesApi {
 
         new WebServer().configure(
                 routes -> routes
-                        .get("/displayScore", (context) -> tennisService
+                        .get("/displayScore", (context) -> new TennisService()
                                 .displayScore(context.get("player1Name"),
                                         context.query().getInteger("player1Score"),
                                         context.get("player2Name"),
                                         context.query().getInteger("player2Score")))
-                        .get("/displayAlternativeScore", (context) -> tennisService
+                        .get("/displayAlternativeScore", (context) -> new TennisService()
                                 .displayAlternativeScore(context.get("player1Name"),
                                         context.query().getInteger("player1Score"),
                                         context.get("player2Name"),
                                         context.query().getInteger("player2Score")))
-                        .get("/displayFrenchScore", (context) -> tennisService
+                        .get("/displayFrenchScore", (context) -> new TennisService()
                                 .displayFrenchScore(context.get("player1Name"),
                                         context.query().getInteger("player1Score"),
                                         context.get("player2Name"),
                                         context.query().getInteger("player2Score")))
-                        .get("/displayGermanScore", (context) -> tennisService
+                        .get("/displayGermanScore", (context) -> new TennisService()
                                 .displayGermanScore(context.get("player1Name"),
                                         context.query().getInteger("player1Score"),
                                         context.get("player2Name"),
