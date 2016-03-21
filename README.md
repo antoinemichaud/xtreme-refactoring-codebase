@@ -52,6 +52,11 @@ Lorsque vous serez certains que l'implémentation que vous avez effectuée est c
 
 1. Démarrer votre serveur en utilisant le main présent dans la classe ChallengesApi
 
+    * Soit directement depuis votre IDE
+    * Soit en utilisant la ligne de commande : allez à la racine du projet *xtreme-refactoring* 
+        * `mvn package`
+        * `java -jar target/xtreme-refactoring-1.0.0.jar`
+
 2. Utiliser une requête curl pour vérifier votre implémentation. 
 
 **Attention :**
@@ -79,6 +84,4 @@ Au fil des nouvelles features qui vous serons demandées, les products owners vo
 Pour les récupérer, il vous suffira de faire : 
 
 `git pull --rebase`
-
-
 
