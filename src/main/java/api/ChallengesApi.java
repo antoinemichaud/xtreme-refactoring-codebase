@@ -6,26 +6,24 @@ import tennis.TennisService;
 public class ChallengesApi {
 
     public static void main(String[] args) {
-        TennisService tennisService = new TennisService();
-
         new WebServer().configure(
                 routes -> routes
-                        .get("/displayScore", (context) -> tennisService
+                        .get("/displayScore", (context) -> new TennisService()
                                 .displayScore(context.get("player1Name"),
                                         context.query().getInteger("player1Score"),
                                         context.get("player2Name"),
                                         context.query().getInteger("player2Score")))
-                        .get("/displayScore/alternative", (context) -> tennisService
+                        .get("/displayScore/alternative", (context) -> new TennisService()
                                 .displayAlternativeScore(context.get("player1Name"),
                                         context.query().getInteger("player1Score"),
                                         context.get("player2Name"),
                                         context.query().getInteger("player2Score")))
-                        .get("/displayScore/french", (context) -> tennisService
+                        .get("/displayScore/french", (context) -> new TennisService()
                                 .displayFrenchScore(context.get("player1Name"),
                                         context.query().getInteger("player1Score"),
                                         context.get("player2Name"),
                                         context.query().getInteger("player2Score")))
-                        .get("/displayScore/german", (context) -> tennisService
+                        .get("/displayScore/german", (context) -> new TennisService()
                                 .displayGermanScore(context.get("player1Name"),
                                         context.query().getInteger("player1Score"),
                                         context.get("player2Name"),
