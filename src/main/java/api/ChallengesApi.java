@@ -6,16 +6,15 @@ import tennis.TennisService;
 public class ChallengesApi {
 
     public static void main(String[] args) {
-        TennisService tennisService = new TennisService();
 
         new WebServer().configure(
                 routes -> routes
-                        .get("/displayScore", (context) -> tennisService
+                        .get("/displayScore", (context) -> new TennisService()
                                 .displayScore(context.get("player1Name"),
                                         context.query().getInteger("player1Score"),
                                         context.get("player2Name"),
                                         context.query().getInteger("player2Score")))
-                        .get("/displayAlternativeScore", (context) -> tennisService
+                        .get("/displayAlternativeScore", (context) -> new TennisService()
                                 .displayAlternativeScore(context.get("player1Name"),
                                         context.query().getInteger("player1Score"),
                                         context.get("player2Name"),
