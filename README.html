@@ -455,10 +455,13 @@ réellement nécessaires.</p>
 <div class="sect2">
 <h3 id="enregistrement-en-tant-que-participant">Enregistrement en tant que participant</h3>
 <div class="paragraph">
-<p>Avant de participer, il faut vous enregistrer en utilisant la commande curl suivant et en indiquant le vrai nom de votre équipe :</p>
+<p>Avant de participer, il faut vous enregistrer en utilisant la commande curl suivante et en indiquant le vrai nom de votre équipe :</p>
 </div>
 <div class="paragraph">
-<p><code>curl 'http://localhost:8082/registerRest' -H 'Pragma: no-cache' -H 'Origin: chrome-extension://fdmmgilgnpjigdojojpjoooidkmcomcm' -H 'Accept-Encoding: gzip, deflate' -H 'Accept-Language: fr-FR,fr;q=0.8,en-US;q=0.6,en;q=0.4' -H 'User-Agent: Mozilla/5.0 (iPad; CPU OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1' -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'Cache-Control: no-cache' -H 'Connection: keep-alive' --data-binary $'{\n  "name": "MY_TEAM_NAME"\n}' --compressed</code></p>
+<p><code>curl 'http://192.168.0.193:8082/registerRest' -H 'Content-Type: application/json' -H 'Accept: application/json' --data-binary $'{\n  "name": "MY_TEAM_NAME"\n}' --compressed</code></p>
+</div>
+<div class="paragraph">
+<p>Il est aussi possible de s&#8217;inscrire directement depuis votre navigateur : <code><a href="http://192.168.0.193:8082" class="bare">http://192.168.0.193:8082</a></code></p>
 </div>
 </div>
 </div>
@@ -645,7 +648,7 @@ ChallengesApi</p>
 </div>
 </li>
 <li>
-<p>Utiliser une requête curl pour vérifier votre implémentation.</p>
+<p>Utiliser une requête http pour vérifier votre implémentation.</p>
 </li>
 </ol>
 </div>
@@ -669,13 +672,19 @@ vérifier qu&#8217;il est démarré avant de faire vérifier votre code.</p>
 </ul>
 </div>
 <div class="paragraph">
-<p><code>curl 'http://xxx.xxx.xxx.xxx:8082/compare' -X POST -H 'Pragma: no-cache' -H 'Origin: chrome-extension://fdmmgilgnpjigdojojpjoooidkmcomcm' -H 'Accept-Encoding: gzip, deflate' -H 'Accept-Language: fr-FR,fr;q=0.8,en-US;q=0.6,en;q=0.4' -H 'User-Agent: Mozilla/5.0 (iPad; CPU OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1' -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'Cache-Control: no-cache' -H 'Connection: keep-alive' -H 'Content-Length: 0' --compressed</code></p>
+<p><code>curl 'http://192.168.0.193:8082/compare' -H 'Content-Type: application/json' -H 'Accept: application/json'</code></p>
+</div>
+<div class="paragraph">
+<p>ou</p>
+</div>
+<div class="paragraph">
+<p>directement dans votre navigateur : <code><a href="http://192.168.0.193:8082/compare" class="bare">http://192.168.0.193:8082/compare</a></code></p>
 </div>
 <div class="paragraph">
 <p>Réponse :</p>
 </div>
 <div class="paragraph">
-<p><code>{"success":true,"scoreInfo":{"details":{"scoresByTurn":[{"score":0}]},"total":0,"ranking":1},"trialNumberLeft":1,"errors":[]}</code></p>
+<p>`{"success":true,"scoreInfo":{"details":{"scoresByTurn":[{"score":0}]},"total":0,"ranking":1},"trialNumberLeft":1,"errors":[]}</p>
 </div>
 </div>
 <div class="sect2">
@@ -694,7 +703,7 @@ récupérer, il vous suffira de faire :</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2016-03-22 12:53:04 CET
+Last updated 2016-03-22 20:24:36 CET
 </div>
 </div>
 </body>
