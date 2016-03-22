@@ -1,13 +1,8 @@
 package tennis;
 
 import org.junit.Test;
-import org.junit.runners.Parameterized.Parameters;
-
-import java.util.Arrays;
-import java.util.Collection;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.Assert.assertEquals;
 
 public class TennisTest {
 
