@@ -820,13 +820,16 @@ Eclipse vous demande de choisir votre Workspace. Cliquez sur browse et sélectio
 <div class="sect2">
 <h3 id="enregistrement-en-tant-que-participant">Enregistrement en tant que participant</h3>
 <div class="paragraph">
-<p>Avant de participer, il faut vous enregistrer en utilisant la commande curl suivante et en indiquant le vrai nom de votre équipe :</p>
+<p>Pour rentrer dans l&#8217;arène, il faut vous enregistrer.</p>
 </div>
 <div class="paragraph">
-<p><code>curl 'http://192.168.0.193:8082/registerRest' -H 'Content-Type: application/json' -H 'Accept: application/json' --data-binary $'{\n  "name": "MY_TEAM_NAME"\n}' --compressed</code></p>
+<p>Pour cela, ouvrez le leader board, disponible sur <a href="http://192.168.0.193:8082">http://192.168.0.193:8082</a>, et ajoutez le nom de votre groupe de combat</p>
 </div>
 <div class="paragraph">
-<p>Il est aussi possible de s&#8217;inscrire directement depuis votre navigateur : <code>http://192.168.0.193:8082</code></p>
+<p>Ou bien utilisez la commande curl suivante en pensant à remplacer "MY_TEAM_NAME" par le nom de votre équipe :</p>
+</div>
+<div class="paragraph">
+<p><code>curl 'http://192.168.0.193:8082/registerRest' -H 'Content-Type: application/json' -d '{"name": "MY_TEAM_NAME"}'</code></p>
 </div>
 </div>
 </div>
@@ -1069,7 +1072,7 @@ récupérer, il vous suffira de faire :</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2016-03-23 00:30:37 CET
+Last updated 2016-03-23 00:38:09 CET
 </div>
 </div>
 </body>
