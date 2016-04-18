@@ -13,3 +13,16 @@ def should_display_score_for_equality():
     assert display_score(2, 2) == "thirty-all"
     assert display_score(3, 3) == "deuce"
     assert display_score(4, 4) == "deuce"
+
+
+def should_display_score_for_advantage():
+    assert display_score(3, 4) == "advantage player2"
+    assert display_score(4, 3) == "advantage player1"
+    assert display_score(5, 4) == "advantage player1"
+    assert display_score(14, 15) == "advantage player2"
+
+
+def should_display_score_for_the_end_of_the_game():
+    assert display_score(6, 4) == "win for player1"
+    assert display_score(4, 6) == "win for player2"
+    assert display_score(16, 14) == "win for player1"
