@@ -4,20 +4,20 @@
     <groupId>xebia</groupId>
     <artifactId>xtreme-refactoring</artifactId>
     <version>1.0.0</version>
-    <repositories>
-        <repository>
-            <id>xtreme-refactoring-mirror</id>
-            <name>xtreme-refactoring-mirror</name>
-            <url>http://192.168.0.193:8000/maven_mirror</url>
-        </repository>
-    </repositories>
-    <pluginRepositories>
-        <pluginRepository>
-            <id>xtreme-refactoring-mirror</id>
-            <name>xtreme-refactoring-mirror</name>
-            <url>http://192.168.0.193:8000/maven_mirror</url>
-        </pluginRepository>
-    </pluginRepositories>
+    <!--<repositories>-->
+        <!--<repository>-->
+            <!--<id>xtreme-refactoring-mirror</id>-->
+            <!--<name>xtreme-refactoring-mirror</name>-->
+            <!--<url>http://192.168.0.193:8000/maven_mirror</url>-->
+        <!--</repository>-->
+    <!--</repositories>-->
+    <!--<pluginRepositories>-->
+        <!--<pluginRepository>-->
+            <!--<id>xtreme-refactoring-mirror</id>-->
+            <!--<name>xtreme-refactoring-mirror</name>-->
+            <!--<url>http://192.168.0.193:8000/maven_mirror</url>-->
+        <!--</pluginRepository>-->
+    <!--</pluginRepositories>-->
     <dependencies>
         <dependency>
             <groupId>junit</groupId>
