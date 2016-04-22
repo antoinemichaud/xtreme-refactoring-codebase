@@ -13,14 +13,14 @@ public class ChallengesApi {
                                         context.query().getInteger("player1Score"),
                                         context.get("player2Name"),
                                         context.query().getInteger("player2Score")))
-                        .get("/displayScore/:language", (context, language) ->
-                                new TennisService()
-                                        .displayScore(language, context.get("player1Name"),
-                                                context.query().getInteger("player1Score"),
-                                                context.get("player2Name"),
-                                                context.query().getInteger("player2Score")
-                                        )
-                        )
+//                        .get("/displayScore/:language", (context, language) ->
+//                                new TennisService()
+//                                        .displayScore(language, context.get("player1Name"),
+//                                                context.query().getInteger("player1Score"),
+//                                                context.get("player2Name"),
+//                                                context.query().getInteger("player2Score")
+//                                        )
+//                        )
         ).start(8080);
     }
 
