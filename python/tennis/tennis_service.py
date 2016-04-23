@@ -100,3 +100,80 @@ class TennisService:
 
     def P2Score(self):
         self.p2points +=1
+
+
+    def display_score_with_lang(self, language, p1score, p2Score):
+        self.p1points = p1score
+        self.p2points = p2Score
+        return self.french_score()
+
+
+    def french_score(self):
+        result = ""
+        if (self.p1points == self.p2points and self.p1points < 3):
+            if (self.p1points==0):
+                result = "zéro"
+            if (self.p1points==1):
+                result = "quinze"
+            if (self.p1points==2):
+                result = "trente"
+            result += "-partout"
+        if (self.p1points==self.p2points and self.p1points>2):
+            result = "égalité"
+
+        P1res = ""
+        P2res = ""
+        if (self.p1points > 0 and self.p2points==0):
+            if (self.p1points==1):
+                P1res = "quinze"
+            if (self.p1points==2):
+                P1res = "trente"
+            if (self.p1points==3):
+                P1res = "quarante"
+
+            P2res = "zéro"
+            result = P1res + "-" + P2res
+        if (self.p2points > 0 and self.p1points==0):
+            if (self.p2points==1):
+                P2res = "quinze"
+            if (self.p2points==2):
+                P2res = "trente"
+            if (self.p2points==3):
+                P2res = "quarante"
+
+            P1res = "zéro"
+            result = P1res + "-" + P2res
+
+
+        if (self.p1points>self.p2points and self.p1points < 4):
+            if (self.p1points==2):
+                P1res="trente"
+            if (self.p1points==3):
+                P1res="quarante"
+            if (self.p2points==1):
+                P2res="quinze"
+            if (self.p2points==2):
+                P2res="trente"
+            result = P1res + "-" + P2res
+        if (self.p2points>self.p1points and self.p2points < 4):
+            if (self.p2points==2):
+                P2res="trente"
+            if (self.p2points==3):
+                P2res="quarante"
+            if (self.p1points==1):
+                P1res="quinze"
+            if (self.p1points==2):
+                P1res="trente"
+            result = P1res + "-" + P2res
+
+        if (self.p1points > self.p2points and self.p2points >= 3):
+            result = "avantage " + self.player1Name
+
+        if (self.p2points > self.p1points and self.p1points >= 3):
+            result = "avantage " + self.player2Name
+
+        if (self.p1points>=4 and self.p2points>=0 and (self.p1points-self.p2points)>=2):
+            result = "jeu pour " + self.player1Name
+        if (self.p2points>=4 and self.p1points>=0 and (self.p2points-self.p1points)>=2):
+            result = "jeu pour " + self.player2Name
+        return result
