@@ -12,7 +12,8 @@ def hello_world():
 
 @app.route('/displayScore')
 def display_score():
-    return tennis.tennis_service.display_score(int(request.args.get("player1Score")), int(request.args.get("player2Score")))
+    return tennis.tennis_service.TennisService().display_score(int(request.args.get("player1Score")),
+                                                               int(request.args.get("player2Score")))
 
 
 if __name__ == '__main__':
