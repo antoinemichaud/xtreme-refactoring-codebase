@@ -93,6 +93,90 @@ TennisService.prototype.getScore = function () {
   return score;
 };
 
+TennisService.prototype.displayScoreWithLang = function (language, p1S, p2S) {
+  this.P1point = p1S;
+  this.P2point = p2S;
+  return this.getFrenchScore();
+};
+
+TennisService.prototype.getFrenchScore = function () {
+  var score = "";
+
+  if (this.P1point === this.P2point && this.P1point < 3) {
+    if (this.P1point === 0)
+      score = "zéro";
+    if (this.P1point === 1)
+      score = "quinze";
+    if (this.P1point === 2)
+      score = "trente";
+    score += "-partout";
+  }
+  if (this.P1point === this.P2point && this.P1point > 2)
+    score = "égalité";
+
+  if (this.P1point > 0 && this.P2point === 0) {
+    if (this.P1point === 1)
+      this.P1res = "quinze";
+    if (this.P1point === 2)
+      this.P1res = "trente";
+    if (this.P1point === 3)
+      this.P1res = "quarante";
+
+    this.P2res = "zéro";
+    score = this.P1res + "-" + this.P2res;
+  }
+  if (this.P2point > 0 && this.P1point === 0) {
+    if (this.P2point === 1)
+      this.P2res = "quinze";
+    if (this.P2point === 2)
+      this.P2res = "trente";
+    if (this.P2point === 3)
+      this.P2res = "quarante";
+
+    this.P1res = "zéro";
+    score = this.P1res + "-" + this.P2res;
+  }
+
+  if (this.P1point > this.P2point && this.P1point < 4) {
+    if (this.P1point === 2)
+      this.P1res = "trente";
+    if (this.P1point === 3)
+      this.P1res = "quarante";
+    if (this.P2point === 1)
+      this.P2res = "quinze";
+    if (this.P2point === 2)
+      this.P2res = "trente";
+    score = this.P1res + "-" + this.P2res;
+  }
+  if (this.P2point > this.P1point && this.P2point < 4) {
+    if (this.P2point === 2)
+      this.P2res = "trente";
+    if (this.P2point === 3)
+      this.P2res = "quarante";
+    if (this.P1point === 1)
+      this.P1res = "quinze";
+    if (this.P1point === 2)
+    this.P1res = "trente";
+    score = this.P1res + "-" + this.P2res;
+  }
+
+  if (this.P1point > this.P2point && this.P2point >= 3) {
+    score = "avantage player1";
+  }
+
+  if (this.P2point > this.P1point && this.P1point >= 3) {
+    score = "avantage player2";
+  }
+
+  if (this.P1point >= 4 && this.P2point >= 0 && (this.P1point - this.P2point) >= 2) {
+    score = "jeu pour player1";
+  }
+  if (this.P2point >= 4 && this.P1point >= 0 && (this.P2point - this.P1point) >= 2) {
+    score = "jeu pour player2";
+  }
+  return score;
+};
+
 TennisService.prototype.SetP1Score = function (number) {
   var i;
   for (i = 0; i < number; i++) {
