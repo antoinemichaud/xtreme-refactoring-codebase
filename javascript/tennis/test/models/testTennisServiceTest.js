@@ -1,5 +1,6 @@
 var expect = require('chai').expect;
-var tennisService = require('../../models/tennisService');
+var TennisService = require('../../models/tennisService');
+var tennisService = new TennisService();
 
 describe('Tennis Service', function() {
   describe('tennisService#displayScore()', function () {
